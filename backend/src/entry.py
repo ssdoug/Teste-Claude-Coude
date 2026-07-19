@@ -1,5 +1,8 @@
-from workers import Response
+from workers import WorkerEntrypoint
+
+from lib.router import route
 
 
-async def on_fetch(request):
-    return Response.json({"message": "Hello from Python on Cloudflare Workers"})
+class Default(WorkerEntrypoint):
+    async def fetch(self, request):
+        return await route(request, self.env, self.ctx)

@@ -1,4 +1,26 @@
-name = "backend"
+name = "ai-backend"
 main = "src/entry.py"
 compatibility_date = "2026-07-19"
 compatibility_flags = ["python_workers"]
+
+[observability]
+enabled = true
+
+# Rota same-origin em produção (evita CORS). Exige a zona do domínio na
+# Cloudflare. Descomente e ajuste depois que o domínio estiver configurado:
+# routes = [
+#   { pattern = "seudominio.com/api/*", zone_name = "seudominio.com" }
+# ]
+
+# D1 — logs de prompts (SQLite na borda).
+# Crie com `npx wrangler d1 create ai-logs` e cole o ID gerado abaixo:
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "ai-logs"
+# database_id = "<preencha-com-o-id-do-d1>"
+
+# KV — cache de respostas / contadores de rate-limit.
+# Crie com `npx wrangler kv namespace create KV` e cole o ID gerado abaixo:
+# [[kv_namespaces]]
+# binding = "KV"
+# id = "<preencha-com-o-id-do-kv>"

@@ -1,0 +1,9 @@
+[project]
+name = "ai-backend"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+  # Só bibliotecas puras Python, wheels PyEmscripten, ou pacotes já embutidos
+  # no Pyodide (pandas, numpy, matplotlib, etc). Para chamar LLMs, prefira o
+  # `fetch` nativo (services/llm.py) em vez dos SDKs oficiais — veja o TODO lá.
+]
