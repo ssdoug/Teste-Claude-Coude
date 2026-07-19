@@ -1,9 +1,31 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# Astro
+.astro/
+dist/
+
+# Cloudflare
+.wrangler/
+
+# Python
 __pycache__/
 *.pyc
 *.pyo
 venv/
 .venv/
 env/
+
+# Env vars
 .env
+.env.*
+!.env.example
+
+# Logs
+*.log
+logs/
+
+# Editors
 .vscode/
 .idea/
