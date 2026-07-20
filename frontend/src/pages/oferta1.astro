@@ -1,0 +1,675 @@
+---
+// Landing page "Palco Cheio" — importada do Claude Design e reimplementada
+// em HTML/CSS/JS puro (o export original é um formato .dc.html com runtime
+// próprio, incompatível com o build estático do Astro). Página isolada,
+// sem relação com o resto do site — por isso não importa src/styles/global.css.
+const title = 'Palco Cheio — Você no palco, uma banda inteira atrás de você';
+const description = 'Playbacks profissionais para cantar ou tocar por cima, no seu tom, prontos em minutos.';
+---
+
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content={description} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>{title}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="page">
+
+			<!-- HERO -->
+			<header class="hero-header">
+				<div class="wrap hero-nav">
+					<div class="brand">Palco Cheio <span class="brand-note">[nome placeholder]</span></div>
+					<a href="#oferta" class="btn btn-primary btn-sm">Quero soar como uma banda</a>
+				</div>
+				<div class="wrap hero-content">
+					<div class="hero-copy">
+						<div class="pill">♪ Biblioteca com 300+ playbacks dedicados</div>
+						<h1>Você no palco.<br />Uma banda inteira <em>atrás de você.</em></h1>
+						<p class="lead">Playbacks profissionais, prontos para cantar ou tocar por cima — no seu tom, no seu estilo, onde você estiver. Chega de som vazio.</p>
+						<div class="cta-row">
+							<a href="#" title="[SUBSTITUIR: URL do checkout]" class="btn btn-primary">Quero soar como uma banda →</a>
+							<span class="fine-print">Acesso imediato · Garantia de 7 dias</span>
+						</div>
+					</div>
+					<div class="hero-player-wrap">
+						<div class="player-card">
+							<div class="player-head">
+								<div>
+									<div class="eyebrow">Ouça agora</div>
+									<div class="player-title">Amostra da biblioteca</div>
+								</div>
+								<div id="hero-toggle" class="play-btn">
+									<span id="hero-icon">▶</span>
+								</div>
+							</div>
+							<div id="hero-bars" class="bars bars-hero"></div>
+							<div class="player-time">
+								<span id="hero-time">0:00</span><span>0:32</span>
+							</div>
+							<div class="placeholder-note">[SUBSTITUIR: áudio real de amostra]</div>
+						</div>
+					</div>
+				</div>
+			</header>
+
+			<!-- A DOR -->
+			<section class="section section-alt">
+				<div class="wrap-narrow center">
+					<h2>Tocar sozinho não deveria <em class="c-warm">soar sozinho.</em></h2>
+					<p class="section-lead">Você conhece essa sensação: a música é linda, sua voz está pronta — mas falta o baixo, falta a bateria, falta o corpo. E montar banda custa caro, depende de agenda de todo mundo e nem sempre dá certo.</p>
+					<div class="grid grid-3 text-left">
+						<div class="card">
+							<div class="card-title">O som fica vazio</div>
+							<div class="card-text">Só voz e violão não preenchem o ambiente. A música pede mais — e a plateia sente essa falta.</div>
+						</div>
+						<div class="card">
+							<div class="card-title">Banda custa caro</div>
+							<div class="card-text">Contratar músicos para cada apresentação consome o cachê inteiro. E ensaio? Quase impossível alinhar.</div>
+						</div>
+						<div class="card">
+							<div class="card-title">Você fica na mão</div>
+							<div class="card-text">Baixista desmarcou, baterista atrasou. Sua apresentação não pode depender da agenda dos outros.</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- A VIRADA -->
+			<section class="section section-glow">
+				<div class="wrap virada">
+					<div class="virada-media">
+						<div class="media-placeholder">[SUBSTITUIR: foto quente e intimista —<br />mãos no violão / microfone sob luz âmbar]</div>
+					</div>
+					<div class="virada-copy">
+						<div class="eyebrow eyebrow-warm">A virada</div>
+						<h2>Uma biblioteca inteira de acompanhamentos, no seu bolso.</h2>
+						<p class="section-lead left">O Palco Cheio é um catálogo de <strong>playbacks dedicados</strong>: arquivos de áudio com acompanhamento instrumental completo e de alta qualidade, gravados para você cantar ou tocar por cima.</p>
+						<ul class="checklist">
+							<li><span class="check">✓</span><span>Organizados por estilo, gênero e tonalidade — ache a música certa em segundos</span></li>
+							<li><span class="check">✓</span><span>Qualidade de estúdio: arranjos completos com bateria, baixo, teclado e mais</span></li>
+							<li><span class="check">✓</span><span>Download ou streaming — funciona no celular, na caixa de som, no telão da igreja</span></li>
+						</ul>
+						<a href="#" title="[SUBSTITUIR: URL do checkout]" class="btn btn-primary">Quero soar como uma banda →</a>
+					</div>
+				</div>
+			</section>
+
+			<!-- COMO FUNCIONA -->
+			<section class="section section-alt">
+				<div class="wrap">
+					<h2 class="center">Simples assim</h2>
+					<p class="center subhead">Sem mesa de som, sem software, sem complicação.</p>
+					<div class="grid grid-3">
+						<div class="card center">
+							<div class="step-num">1</div>
+							<div class="card-title-lg">Escolha</div>
+							<div class="card-text">Navegue pela biblioteca e encontre a música no estilo e no tom que você precisa.</div>
+						</div>
+						<div class="card center">
+							<div class="step-num">2</div>
+							<div class="card-title-lg">Baixe</div>
+							<div class="card-text">Download imediato para o celular ou computador. Sem software, sem configuração.</div>
+						</div>
+						<div class="card center">
+							<div class="step-num">3</div>
+							<div class="card-title-lg">Toque</div>
+							<div class="card-text">Aperte o play e cante ou toque por cima. A banda inteira entra com você.</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- AMOSTRAS ANTES/DEPOIS -->
+			<section class="section">
+				<div class="wrap-narrow">
+					<div class="center section-head">
+						<div class="eyebrow eyebrow-warm">Prova por demonstração</div>
+						<h2>Ouça a diferença</h2>
+						<p class="section-lead-sm">A mesma música, antes e depois do playback.</p>
+					</div>
+					<div class="samples">
+						<div class="sample-card">
+							<div class="sample-head">
+								<div>
+									<div class="player-title">Como Zaqueu (exemplo)</div>
+									<div class="sample-genre">Louvor e adoração · Tom: G</div>
+								</div>
+								<div class="mode-switch">
+									<button id="s1-antes-btn" class="mode-btn">Antes · só voz</button>
+									<button id="s1-depois-btn" class="mode-btn">Depois · com playback</button>
+								</div>
+							</div>
+							<div class="sample-body">
+								<div id="s1-toggle" class="play-btn play-btn-sm"><span id="s1-icon">▶</span></div>
+								<div id="s1-bars" class="bars bars-sample"></div>
+							</div>
+							<div class="placeholder-note">[SUBSTITUIR: áudios reais antes/depois]</div>
+						</div>
+						<div class="sample-card">
+							<div class="sample-head">
+								<div>
+									<div class="player-title">Wave / Bossa (exemplo)</div>
+									<div class="sample-genre">MPB · Tom: D</div>
+								</div>
+								<div class="mode-switch">
+									<button id="s2-antes-btn" class="mode-btn">Antes · só voz</button>
+									<button id="s2-depois-btn" class="mode-btn">Depois · com playback</button>
+								</div>
+							</div>
+							<div class="sample-body">
+								<div id="s2-toggle" class="play-btn play-btn-sm"><span id="s2-icon">▶</span></div>
+								<div id="s2-bars" class="bars bars-sample"></div>
+							</div>
+							<div class="placeholder-note">[SUBSTITUIR: áudios reais antes/depois]</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- BENEFÍCIOS -->
+			<section class="section section-alt">
+				<div class="wrap">
+					<h2 class="center section-head">O que muda quando a banda chega</h2>
+					<div class="grid grid-4">
+						<div class="card">
+							<div class="glyph">♪</div>
+							<div class="card-title">Soar como banda completa</div>
+							<div class="card-text">Arranjos profissionais que preenchem qualquer ambiente — do barzinho ao salão da igreja.</div>
+						</div>
+						<div class="card">
+							<div class="glyph">♯</div>
+							<div class="card-title">Qualquer tom</div>
+							<div class="card-text">Versões em múltiplas tonalidades para você cantar confortável, sempre.</div>
+						</div>
+						<div class="card">
+							<div class="glyph">◆</div>
+							<div class="card-title">Toque em qualquer lugar</div>
+							<div class="card-text">No culto, na noite, no ensaio em casa. Só precisa de uma caixa de som.</div>
+						</div>
+						<div class="card">
+							<div class="glyph">$</div>
+							<div class="card-title">Economia real</div>
+							<div class="card-text">Menos que o cachê de um único músico — pela banda inteira, para sempre.</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- PROVA SOCIAL -->
+			<section class="section">
+				<div class="wrap">
+					<h2 class="center">Quem já subiu no palco cheio</h2>
+					<p class="center placeholder-note placeholder-note-lg">[SUBSTITUIR: depoimentos, fotos e nomes reais]</p>
+					<div class="grid grid-3-wide">
+						<div class="testimonial">
+							<div class="stars">★★★★★</div>
+							<p class="quote">"No primeiro domingo que usei, três pessoas vieram perguntar quem era a banda. Era só eu e o playback."</p>
+							<div class="person">
+								<div class="avatar">RM</div>
+								<div>
+									<div class="person-name">Ricardo M.</div>
+									<div class="person-role">Cantor de igreja · Campinas, SP</div>
+								</div>
+							</div>
+						</div>
+						<div class="testimonial">
+							<div class="stars">★★★★★</div>
+							<p class="quote">"Toco em restaurante toda sexta. Antes era voz e violão; agora o dono aumentou meu cachê porque o som encheu a casa."</p>
+							<div class="person">
+								<div class="avatar">JS</div>
+								<div>
+									<div class="person-name">Juliana S.</div>
+									<div class="person-role">Voz e violão na noite · Recife, PE</div>
+								</div>
+							</div>
+						</div>
+						<div class="testimonial">
+							<div class="stars">★★★★★</div>
+							<p class="quote">"Ensaiar com o playback mudou tudo. Aprendi a segurar o tempo de verdade — coisa que sozinho eu nunca conseguia."</p>
+							<div class="person">
+								<div class="avatar">AF</div>
+								<div>
+									<div class="person-name">André F.</div>
+									<div class="person-role">Violonista iniciante · Curitiba, PR</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- FAQ -->
+			<section class="section section-alt">
+				<div class="wrap-faq">
+					<h2 class="center section-head">Perguntas que todo músico faz</h2>
+					<div class="faq-list">
+						<div class="faq-item" data-index="0">
+							<button class="faq-toggle">
+								<span>Preciso saber mexer em áudio ou equipamentos?</span>
+								<span class="faq-mark">−</span>
+							</button>
+							<div class="faq-body">Não. Os playbacks chegam prontos: é só dar play em qualquer celular, computador ou caixa de som. Zero edição, zero configuração.</div>
+						</div>
+						<div class="faq-item" data-index="1">
+							<button class="faq-toggle">
+								<span>Funciona no meu tom de voz?</span>
+								<span class="faq-mark">+</span>
+							</button>
+							<div class="faq-body">Sim. As músicas têm versões em múltiplas tonalidades, e o catálogo indica o tom de cada arquivo para você escolher o mais confortável.</div>
+						</div>
+						<div class="faq-item" data-index="2">
+							<button class="faq-toggle">
+								<span>E se eu não gostar?</span>
+								<span class="faq-mark">+</span>
+							</button>
+							<div class="faq-body">Você tem 7 dias de garantia incondicional. Não sentiu diferença? Devolvemos 100% do valor, sem perguntas.</div>
+						</div>
+						<div class="faq-item" data-index="3">
+							<button class="faq-toggle">
+								<span>Posso usar nas minhas apresentações e na igreja?</span>
+								<span class="faq-mark">+</span>
+							</button>
+							<div class="faq-body">Sim — os playbacks são licenciados para uso em apresentações ao vivo, cultos e eventos.</div>
+						</div>
+						<div class="faq-item" data-index="4">
+							<button class="faq-toggle">
+								<span>Como recebo os arquivos?</span>
+								<span class="faq-mark">+</span>
+							</button>
+							<div class="faq-body">Acesso imediato após a compra: você entra na biblioteca online e baixa ou faz streaming das músicas que quiser.</div>
+						</div>
+					</div>
+					<div class="guarantee">
+						<div class="guarantee-badge">7</div>
+						<div>
+							<div class="guarantee-title">Garantia incondicional de 7 dias</div>
+							<div class="guarantee-text">Se não sentir a diferença no seu som, devolvemos 100% do valor. Sem perguntas.</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- OFERTA -->
+			<section id="oferta" class="section section-offer">
+				<div class="wrap-offer">
+					<div class="center offer-head">
+						<div class="pill pill-warm">Preço promocional por tempo limitado</div>
+						<h2>Sua banda completa por menos que um cachê</h2>
+					</div>
+					<div class="offer-card">
+						<div class="center offer-price">
+							<div class="price-anchor">de R$ 197</div>
+							<div class="price-main">R$ 97</div>
+							<div class="price-note">pagamento único · acesso vitalício <span class="placeholder-note">[SUBSTITUIR: preço real]</span></div>
+						</div>
+						<ul class="checklist checklist-offer">
+							<li><span class="check">✓</span><span>Acesso a 300+ playbacks dedicados em alta qualidade</span></li>
+							<li><span class="check">✓</span><span>Organização por estilo, gênero e tonalidade</span></li>
+							<li><span class="check">✓</span><span>Novas músicas adicionadas todo mês</span></li>
+							<li><span class="check">✓</span><span>Bônus: guia rápido "Seu primeiro show com playback"</span></li>
+							<li><span class="check">✓</span><span>Garantia incondicional de 7 dias</span></li>
+						</ul>
+						<a href="#" title="[SUBSTITUIR: URL do checkout]" class="btn btn-primary btn-block">Quero soar como uma banda →</a>
+						<div class="center fine-print offer-fine-print">Acesso imediato · Garantia de 7 dias · Pagamento seguro</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- CTA FINAL -->
+			<section class="section section-alt center">
+				<div class="wrap-narrow">
+					<h2>Na próxima vez que você subir no palco, <em class="c-warm">você não estará sozinho.</em></h2>
+					<p class="section-lead">300+ playbacks esperando por você. Escolha, aperte o play e cante.</p>
+					<a href="#" title="[SUBSTITUIR: URL do checkout]" class="btn btn-primary">Quero soar como uma banda →</a>
+				</div>
+			</section>
+
+			<!-- RODAPÉ -->
+			<footer class="footer">
+				<div class="wrap footer-inner">
+					<div class="footer-brand">Palco Cheio</div>
+					<div class="footer-links">
+						<a href="#">Contato</a>
+						<a href="#">Garantia</a>
+						<a href="#">Termos de uso</a>
+						<a href="#">Privacidade</a>
+					</div>
+					<div class="footer-legal">© 2026 Palco Cheio · <span class="placeholder-note">[SUBSTITUIR: CNPJ / dados legais]</span></div>
+				</div>
+			</footer>
+
+			<!-- STICKY CTA MOBILE -->
+			<div class="sticky-cta">
+				<span>R$ 97 · acesso imediato</span>
+				<a href="#" title="[SUBSTITUIR: URL do checkout]" class="btn btn-primary btn-sm">Começar agora</a>
+			</div>
+
+		</div>
+
+		<style>
+			:root {
+				--bg: #1c130d;
+				--bg-alt: #17100b;
+				--bg-card: #211610;
+				--bg-card-2: #271a11;
+				--bg-footer: #120c08;
+				--border: #342316;
+				--border-2: #3d2a1a;
+				--text: #f3e9dd;
+				--text-bright: #f8f0e4;
+				--text-muted: #c9b39c;
+				--text-dim: #b59d84;
+				--text-faint: #8a6f56;
+				--text-faintest: #5e4a38;
+				--accent: #e59a3f;
+				--accent-light: #e8a95c;
+				--warm: #c96f4a;
+			}
+			.page * { box-sizing: border-box; }
+			.page {
+				margin: 0;
+				padding: 0;
+				background: var(--bg);
+				font-family: 'Figtree', sans-serif;
+				color: var(--text);
+				-webkit-font-smoothing: antialiased;
+				line-height: 1.6;
+				min-width: 320px;
+			}
+			.page a { color: var(--accent-light); }
+			.page a:hover { color: #f0bf82; }
+			.page h1, .page h2 {
+				font-family: 'Instrument Serif', serif;
+				font-weight: 400;
+				margin: 0;
+				color: var(--text);
+			}
+			.page em { font-style: italic; }
+			.c-warm { color: var(--warm); }
+
+			.wrap { max-width: 1100px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+			.wrap-narrow { max-width: 900px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+			.wrap-faq { max-width: 760px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+			.wrap-offer { max-width: 560px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+			.center { text-align: center; }
+			.text-left { text-align: left; }
+
+			.section { padding: 88px 0; }
+			.section-alt { background: var(--bg-alt); }
+			.section-glow { background: radial-gradient(ellipse 70% 80% at 50% 100%, #3a2514 0%, var(--bg) 70%); padding: 96px 0; }
+			.section-offer { background: radial-gradient(ellipse 70% 70% at 50% 0%, #4a2f1a 0%, var(--bg) 70%); padding: 96px 0; }
+
+			.pill {
+				display: inline-flex; align-items: center; gap: 8px;
+				background: rgba(229,154,63,.12); border: 1px solid rgba(229,154,63,.35);
+				color: var(--accent-light); font-size: 13px; font-weight: 600;
+				padding: 7px 14px; border-radius: 999px; letter-spacing: .4px;
+			}
+			.pill-warm { background: rgba(201,111,74,.18); border-color: rgba(201,111,74,.45); color: #e09a76; }
+
+			.btn {
+				display: inline-flex; align-items: center; gap: 10px;
+				background: var(--accent); color: #241503; font-weight: 700;
+				font-size: 17px; padding: 17px 34px; border-radius: 999px;
+				text-decoration: none; box-shadow: 0 10px 40px rgba(229,154,63,.35);
+				border: none; cursor: pointer; transition: background .15s;
+			}
+			.btn:hover { background: #f0ac59; color: #241503; }
+			.btn-sm { font-size: 15px; padding: 11px 22px; box-shadow: none; }
+			.btn-block { display: flex; justify-content: center; width: 100%; }
+			.fine-print { font-size: 13px; color: var(--text-faint); }
+
+			/* HERO */
+			.hero-header { position: relative; overflow: hidden; background: radial-gradient(ellipse 80% 60% at 50% -10%, #4a2f1a 0%, #2a1a10 45%, var(--bg) 100%); }
+			.hero-nav { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; }
+			.brand { font-family: 'Instrument Serif', serif; font-size: 26px; letter-spacing: .5px; color: var(--text); }
+			.brand-note { font-family: 'Figtree'; font-size: 11px; color: var(--text-faint); vertical-align: super; }
+			.hero-content { display: flex; flex-wrap: wrap; gap: 48px; align-items: center; padding: 56px 0 88px; }
+			.hero-copy { flex: 1 1 480px; min-width: 300px; }
+			.hero-copy h1 { font-size: clamp(40px, 5.5vw, 64px); line-height: 1.08; margin: 22px 0 18px; color: var(--text-bright); }
+			.hero-copy h1 em { color: var(--accent-light); }
+			.lead { font-size: 19px; line-height: 1.6; color: var(--text-muted); margin: 0 0 30px; max-width: 480px; }
+			.cta-row { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+			.hero-player-wrap { flex: 1 1 380px; min-width: 300px; }
+
+			.player-card { background: linear-gradient(160deg,#31201400,#31201466), var(--bg-card-2); border: 1px solid var(--border-2); border-radius: 20px; padding: 26px; box-shadow: 0 30px 80px rgba(0,0,0,.45); }
+			.player-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+			.eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: var(--text-faint); text-transform: uppercase; }
+			.eyebrow-warm { color: var(--warm); margin-bottom: 14px; }
+			.player-title { font-family: 'Instrument Serif', serif; font-size: 22px; color: var(--text); margin-top: 4px; }
+			.play-btn { width: 58px; height: 58px; border-radius: 999px; background: var(--accent); color: #241503; display: flex; align-items: center; justify-content: center; font-size: 20px; cursor: pointer; box-shadow: 0 8px 26px rgba(229,154,63,.4); flex: none; }
+			.play-btn-sm { width: 48px; height: 48px; font-size: 17px; box-shadow: none; }
+			.bars { display: flex; align-items: flex-end; gap: 3px; }
+			.bars > div { flex: 1; border-radius: 2px; }
+			.bars-hero { height: 64px; margin: 18px 0 10px; }
+			.bars-sample { height: 44px; flex: 1; }
+			.player-time { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-faint); font-variant-numeric: tabular-nums; }
+			.placeholder-note { margin-top: 14px; border-top: 1px dashed var(--border-2); padding-top: 12px; font-family: monospace; font-size: 11px; color: #7a614c; }
+			.placeholder-note-lg { border-top: none; padding-top: 0; margin-bottom: 48px; font-size: 12px; }
+
+			/* GRIDS / CARDS */
+			.grid { display: grid; gap: 18px; }
+			.grid-3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+			.grid-4 { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; }
+			.grid-3-wide { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+			.card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; }
+			.card-title { font-size: 15px; font-weight: 700; color: var(--accent-light); margin-bottom: 8px; }
+			.card-title-lg { font-size: 19px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+			.card-text { font-size: 15px; line-height: 1.6; color: var(--text-dim); }
+			.card.center { text-align: center; border-radius: 18px; padding: 30px; }
+			.step-num { width: 52px; height: 52px; border-radius: 999px; background: rgba(229,154,63,.14); border: 1px solid rgba(229,154,63,.4); color: var(--accent-light); font-family: 'Instrument Serif', serif; font-size: 24px; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; }
+			.glyph { width: 44px; height: 44px; border-radius: 12px; background: rgba(201,111,74,.16); color: var(--warm); font-size: 19px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+
+			.section-head { margin-bottom: 52px; }
+			.subhead { text-align: center; font-size: 17px; color: var(--text-dim); margin: 0 0 52px; }
+			.section-lead { font-size: 18px; line-height: 1.65; color: var(--text-dim); max-width: 620px; margin: 0 auto 48px; }
+			.section-lead.left { margin: 0 0 20px; text-align: left; max-width: none; }
+			.section-lead-sm { font-size: 17px; color: var(--text-dim); margin: 0; }
+			.section-head.center { margin-bottom: 12px; }
+
+			h2 { font-size: clamp(30px, 4vw, 44px); line-height: 1.15; margin: 0 0 18px; }
+
+			/* VIRADA */
+			.virada { display: flex; flex-wrap: wrap; gap: 56px; align-items: center; }
+			.virada-media { flex: 1 1 380px; min-width: 300px; order: 2; }
+			.virada-copy { flex: 1 1 460px; min-width: 300px; }
+			.media-placeholder { aspect-ratio: 4/5; border-radius: 20px; border: 1px dashed #5a3f27; background: repeating-linear-gradient(45deg,#241811,#241811 10px,#211510 10px,#211510 20px); display: flex; align-items: center; justify-content: center; text-align: center; padding: 24px; font-family: monospace; font-size: 12px; line-height: 1.7; color: var(--text-faint); }
+			.checklist { list-style: none; padding: 0; margin: 0 0 28px; display: grid; gap: 12px; }
+			.checklist li { display: flex; gap: 12px; align-items: flex-start; font-size: 16px; line-height: 1.5; color: var(--text-muted); }
+			.checklist .check { color: var(--accent-light); font-weight: 700; }
+			.checklist-offer li { font-size: 15px; color: #d8c4ac; }
+
+			/* SAMPLES */
+			.samples { display: grid; gap: 20px; }
+			.sample-card { background: var(--bg-card-2); border: 1px solid var(--border-2); border-radius: 20px; padding: 24px 26px; }
+			.sample-head { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+			.sample-genre { font-size: 13px; color: var(--text-faint); margin-top: 3px; }
+			.mode-switch { display: flex; gap: 6px; background: var(--bg); border-radius: 999px; padding: 5px; }
+			.mode-btn { border: none; cursor: pointer; font-family: 'Figtree'; font-weight: 600; font-size: 13px; padding: 8px 18px; border-radius: 999px; background: transparent; color: var(--text-faint); }
+			.sample-body { display: flex; align-items: center; gap: 18px; }
+
+			/* TESTIMONIALS */
+			.testimonial { background: var(--bg-card-2); border: 1px solid var(--border-2); border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 18px; }
+			.stars { color: var(--accent-light); font-size: 15px; letter-spacing: 2px; }
+			.quote { font-size: 16px; line-height: 1.65; color: #d8c4ac; margin: 0; flex: 1; }
+			.person { display: flex; align-items: center; gap: 14px; }
+			.avatar { width: 46px; height: 46px; border-radius: 999px; background: repeating-linear-gradient(45deg,#3a2717,#3a2717 4px,#332112 4px,#332112 8px); color: var(--accent-light); font-weight: 700; font-size: 15px; display: flex; align-items: center; justify-content: center; }
+			.person-name { font-size: 15px; font-weight: 700; color: var(--text); }
+			.person-role { font-size: 13px; color: var(--text-faint); }
+
+			/* FAQ */
+			.faq-list { display: grid; gap: 12px; }
+			.faq-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+			.faq-toggle { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 16px; background: none; border: none; cursor: pointer; text-align: left; padding: 20px 22px; font-family: 'Figtree'; font-size: 16px; font-weight: 600; color: var(--text); }
+			.faq-mark { color: var(--accent-light); font-size: 18px; flex: none; }
+			.faq-body { display: none; padding: 0 22px 20px; font-size: 15px; line-height: 1.65; color: var(--text-dim); }
+			.faq-item.open .faq-body { display: block; }
+			.guarantee { margin-top: 40px; display: flex; align-items: center; gap: 18px; background: rgba(229,154,63,.08); border: 1px solid rgba(229,154,63,.3); border-radius: 16px; padding: 22px 26px; }
+			.guarantee-badge { flex: none; width: 56px; height: 56px; border-radius: 999px; border: 2px solid var(--accent-light); color: var(--accent-light); display: flex; align-items: center; justify-content: center; font-family: 'Instrument Serif', serif; font-size: 22px; }
+			.guarantee-title { font-size: 16px; font-weight: 700; color: var(--text); }
+			.guarantee-text { font-size: 14px; color: var(--text-dim); margin-top: 3px; }
+
+			/* OFERTA */
+			.offer-head { margin-bottom: 36px; }
+			.offer-head h2 { margin: 18px 0 0; }
+			.offer-card { background: var(--bg-card-2); border: 1px solid rgba(229,154,63,.4); border-radius: 24px; padding: 36px; box-shadow: 0 30px 90px rgba(0,0,0,.5); }
+			.offer-price { margin-bottom: 26px; }
+			.price-anchor { font-size: 15px; color: var(--text-faint); text-decoration: line-through; }
+			.price-main { font-family: 'Instrument Serif', serif; font-size: 60px; color: var(--text-bright); line-height: 1.1; }
+			.price-note { font-size: 15px; color: var(--text-muted); }
+			.offer-fine-print { margin-top: 14px; }
+
+			/* FOOTER */
+			.footer { background: var(--bg-footer); padding: 48px 24px 110px; }
+			.footer-inner { display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; align-items: center; }
+			.footer-brand { font-family: 'Instrument Serif', serif; font-size: 20px; color: var(--text-muted); }
+			.footer-links { display: flex; flex-wrap: wrap; gap: 22px; font-size: 14px; }
+			.footer-links a { color: var(--text-faint); text-decoration: none; }
+			.footer-legal { font-size: 12px; color: var(--text-faintest); }
+
+			/* STICKY CTA */
+			.sticky-cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; background: rgba(18,12,8,.92); backdrop-filter: blur(10px); border-top: 1px solid var(--border); padding: 12px 16px; display: flex; gap: 14px; align-items: center; justify-content: center; }
+			.sticky-cta span { font-size: 14px; color: var(--text-muted); }
+
+			.placeholder-note { font-family: monospace; }
+		</style>
+
+		<script>
+			function genBars(seed: number, count: number) {
+				const out: number[] = [];
+				for (let i = 0; i < count; i++) {
+					const h = 18 + Math.abs(Math.sin(seed * 7 + i * 1.7) * 62 + Math.sin(i * 0.35 + seed) * 20);
+					out.push(Math.min(96, Math.round(h)));
+				}
+				return out;
+			}
+
+			function renderBars(container: HTMLElement, heights: number[], active: boolean, pct: number) {
+				container.innerHTML = '';
+				heights.forEach((h, i) => {
+					const played = (i / heights.length) * 100 < pct;
+					const div = document.createElement('div');
+					div.style.height = h + '%';
+					div.style.background = played ? '#e59a3f' : active ? '#6b4a2c' : '#443021';
+					container.appendChild(div);
+				});
+			}
+
+			function fmtTime(pct: number) {
+				const sec = Math.round((pct / 100) * 32);
+				return '0:' + String(sec).padStart(2, '0');
+			}
+
+			const heroBars = genBars(2, 44);
+			const sampleSeeds: Record<string, number> = { s1: 5, s2: 11 };
+
+			type Mode = 'antes' | 'depois';
+			const state = {
+				playing: null as string | null,
+				progress: { hero: 0, s1: 0, s2: 0 } as Record<string, number>,
+				modes: { s1: 'depois' as Mode, s2: 'depois' as Mode },
+			};
+
+			function sampleBars(id: 's1' | 's2') {
+				const antes = state.modes[id] === 'antes';
+				const seed = sampleSeeds[id] + (antes ? 0 : 3);
+				const heights = genBars(seed, 44).map((h) => (antes ? Math.max(8, Math.round(h * 0.35)) : h));
+				return { heights, active: !antes };
+			}
+
+			const els = {
+				heroBars: document.getElementById('hero-bars') as HTMLElement,
+				heroIcon: document.getElementById('hero-icon') as HTMLElement,
+				heroTime: document.getElementById('hero-time') as HTMLElement,
+				s1Bars: document.getElementById('s1-bars') as HTMLElement,
+				s1Icon: document.getElementById('s1-icon') as HTMLElement,
+				s2Bars: document.getElementById('s2-bars') as HTMLElement,
+				s2Icon: document.getElementById('s2-icon') as HTMLElement,
+			};
+
+			function updatePlayer(id: string) {
+				const pct = state.progress[id] || 0;
+				if (id === 'hero') {
+					renderBars(els.heroBars, heroBars, true, pct);
+					els.heroIcon.textContent = state.playing === 'hero' ? '❚❚' : '▶';
+					els.heroTime.textContent = fmtTime(pct);
+				} else {
+					const { heights, active } = sampleBars(id as 's1' | 's2');
+					const barsEl = id === 's1' ? els.s1Bars : els.s2Bars;
+					const iconEl = id === 's1' ? els.s1Icon : els.s2Icon;
+					renderBars(barsEl, heights, active, pct);
+					iconEl.textContent = state.playing === id ? '❚❚' : '▶';
+				}
+			}
+
+			function updateModeButtons(id: 's1' | 's2') {
+				const antes = state.modes[id] === 'antes';
+				const antesBtn = document.getElementById(id + '-antes-btn') as HTMLElement;
+				const depoisBtn = document.getElementById(id + '-depois-btn') as HTMLElement;
+				antesBtn.style.background = antes ? '#e59a3f' : 'transparent';
+				antesBtn.style.color = antes ? '#241503' : '#8a6f56';
+				depoisBtn.style.background = !antes ? '#e59a3f' : 'transparent';
+				depoisBtn.style.color = !antes ? '#241503' : '#8a6f56';
+			}
+
+			function toggle(id: string) {
+				state.playing = state.playing === id ? null : id;
+				['hero', 's1', 's2'].forEach(updatePlayer);
+			}
+
+			function setMode(id: 's1' | 's2', mode: Mode) {
+				state.modes[id] = mode;
+				updateModeButtons(id);
+				updatePlayer(id);
+			}
+
+			document.getElementById('hero-toggle')?.addEventListener('click', () => toggle('hero'));
+			document.getElementById('s1-toggle')?.addEventListener('click', () => toggle('s1'));
+			document.getElementById('s2-toggle')?.addEventListener('click', () => toggle('s2'));
+			document.getElementById('s1-antes-btn')?.addEventListener('click', () => setMode('s1', 'antes'));
+			document.getElementById('s1-depois-btn')?.addEventListener('click', () => setMode('s1', 'depois'));
+			document.getElementById('s2-antes-btn')?.addEventListener('click', () => setMode('s2', 'antes'));
+			document.getElementById('s2-depois-btn')?.addEventListener('click', () => setMode('s2', 'depois'));
+
+			['hero', 's1', 's2'].forEach(updatePlayer);
+			(['s1', 's2'] as const).forEach(updateModeButtons);
+
+			setInterval(() => {
+				const p = state.playing;
+				if (!p) return;
+				const cur = (state.progress[p] || 0) + 1.2;
+				if (cur >= 100) {
+					state.progress[p] = 0;
+					state.playing = null;
+				} else {
+					state.progress[p] = cur;
+				}
+				updatePlayer(p);
+			}, 120);
+
+			// FAQ accordion — item 0 aberto por padrão
+			let openFaq = 0;
+			const faqItems = Array.from(document.querySelectorAll<HTMLElement>('.faq-item'));
+			function renderFaqs() {
+				faqItems.forEach((item, i) => {
+					const mark = item.querySelector('.faq-mark') as HTMLElement;
+					const isOpen = openFaq === i;
+					item.classList.toggle('open', isOpen);
+					mark.textContent = isOpen ? '−' : '+';
+				});
+			}
+			faqItems.forEach((item, i) => {
+				item.querySelector('.faq-toggle')?.addEventListener('click', () => {
+					openFaq = openFaq === i ? -1 : i;
+					renderFaqs();
+				});
+			});
+			renderFaqs();
+		</script>
+	</body>
+</html>
