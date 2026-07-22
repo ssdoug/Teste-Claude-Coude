@@ -15,7 +15,11 @@ __pycache__/
 *.pyo
 venv/
 .venv/
+.venv-workers/
 env/
+
+# Python Workers (pywrangler/workers-py vendoring)
+python_modules/
 
 # Env vars
 .env

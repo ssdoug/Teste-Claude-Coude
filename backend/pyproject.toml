@@ -7,3 +7,8 @@ dependencies = [
   # no Pyodide (pandas, numpy, matplotlib, etc). Para chamar LLMs, prefira o
   # `fetch` nativo (services/llm.py) em vez dos SDKs oficiais — veja o TODO lá.
 ]
+
+[dependency-groups]
+dev = [
+    "workers-py>=1.15.0",
+]
