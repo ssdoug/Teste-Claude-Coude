@@ -34,9 +34,9 @@ const title = 'Lab — IA Lab';
 			const out = document.getElementById('out') as HTMLElement;
 			const promptEl = document.getElementById('prompt') as HTMLTextAreaElement;
 
-			btn.addEventListener('click', async () => {
+			async function sendPrompt() {
 				const prompt = promptEl.value.trim();
-				if (!prompt) return;
+				if (!prompt || btn.disabled) return;
 
 				btn.disabled = true;
 				out.textContent = 'Pensando...';
@@ -62,6 +62,16 @@ const title = 'Lab — IA Lab';
 					out.textContent = 'Erro na requisição: ' + e;
 				} finally {
 					btn.disabled = false;
+				}
+			}
+
+			btn.addEventListener('click', sendPrompt);
+
+			// Enter envia (padrão dos chats de IA); Shift+Enter quebra linha.
+			promptEl.addEventListener('keydown', (e: KeyboardEvent) => {
+				if (e.key === 'Enter' && !e.shiftKey) {
+					e.preventDefault();
+					sendPrompt();
 				}
 			});
 		</script>
