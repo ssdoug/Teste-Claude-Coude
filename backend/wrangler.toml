@@ -3,14 +3,18 @@ main = "src/entry.py"
 compatibility_date = "2026-07-19"
 compatibility_flags = ["python_workers"]
 
+# Rota same-origin em produção (evita CORS).
+routes = [
+  { pattern = "toolboxai.com.br/api/*", zone_name = "toolboxai.com.br" }
+]
+
+# Sem entrada lateral: a única porta de entrada é a rota acima. O wrangler já
+# desativa isso por padrão ao existir `routes`, mas deixamos explícito.
+workers_dev = false
+preview_urls = false
+
 [observability]
 enabled = true
-
-# Rota same-origin em produção (evita CORS). Exige a zona do domínio na
-# Cloudflare. Descomente e ajuste depois que o domínio estiver configurado:
-# routes = [
-#   { pattern = "seudominio.com/api/*", zone_name = "seudominio.com" }
-# ]
 
 # D1 — logs de prompts (SQLite na borda).
 # Crie com `npx wrangler d1 create ai-logs` e cole o ID gerado abaixo:
